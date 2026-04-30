@@ -18,71 +18,72 @@
     }
 
     body {
-      background: #0b1220;
-      color: #eaf0ff;
+      background: #f7faf8;
+      color: #1f2a24;
       line-height: 1.6;
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      background: rgba(255,255,255,0.8);
+      backdrop-filter: blur(10px);
+      display: flex;
+      justify-content: center;
+      gap: 18px;
+      padding: 14px;
+      border-bottom: 1px solid #e6eee9;
+    }
+
+    nav a {
+      color: #2f5d50;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    nav a:hover {
+      color: #3fae8c;
     }
 
     header {
       padding: 100px 20px;
       text-align: center;
-      background: radial-gradient(circle at top, #2d6cdf, #0b1220 70%);
+      background: linear-gradient(135deg, #e8f7f1, #ffffff);
     }
 
     header h1 {
       font-size: 42px;
       font-weight: 700;
       margin-bottom: 10px;
+      color: #1f2a24;
     }
 
     header p {
-      opacity: 0.85;
-      max-width: 700px;
+      max-width: 750px;
       margin: auto;
       font-size: 16px;
-    }
-
-    nav {
-      position: sticky;
-      top: 0;
-      background: rgba(11,18,32,0.8);
-      backdrop-filter: blur(10px);
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      padding: 15px;
-      border-bottom: 1px solid rgba(255,255,255,0.05);
-    }
-
-    nav a {
-      color: #eaf0ff;
-      text-decoration: none;
-      font-size: 14px;
-      opacity: 0.8;
-    }
-
-    nav a:hover {
-      opacity: 1;
+      color: #4b5b54;
     }
 
     section {
       max-width: 900px;
       margin: 40px auto;
       padding: 30px;
-      background: rgba(255,255,255,0.03);
-      border: 1px solid rgba(255,255,255,0.08);
-      border-radius: 16px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+      background: #ffffff;
+      border: 1px solid #e6eee9;
+      border-radius: 18px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.04);
     }
 
     h2 {
-      color: #7db2ff;
+      color: #2f5d50;
       margin-bottom: 15px;
       font-size: 22px;
     }
 
     p {
-      opacity: 0.9;
+      color: #4b5b54;
       font-size: 15px;
     }
 
@@ -93,33 +94,21 @@
 
     li {
       margin-bottom: 8px;
-      opacity: 0.9;
+      color: #4b5b54;
     }
 
     .card {
-      background: rgba(45,108,223,0.1);
-      border-left: 4px solid #2d6cdf;
+      background: #e8f7f1;
+      border-left: 5px solid #3fae8c;
       padding: 15px;
       margin-top: 15px;
-      border-radius: 10px;
+      border-radius: 12px;
+      color: #2f5d50;
     }
 
-    footer {
-      text-align: center;
-      padding: 40px 20px;
-      font-size: 13px;
-      opacity: 0.6;
-    }
-
-    @media (max-width: 600px) {
-      header h1 {
-        font-size: 30px;
-      }
-
-      section {
-        margin: 20px;
-        padding: 20px;
-      }
+    section:hover {
+      transform: translateY(-2px);
+      transition: 0.2s ease;
     }
   </style>
 </head>
@@ -136,31 +125,31 @@
 
 <header>
   <h1>Classroom Supply Support Platform</h1>
-  <p>A modern digital platform connecting teachers, parents, and communities to support essential classroom needs</p>
+  <p>A simple, modern platform connecting teachers, parents, and communities to support essential classroom needs</p>
 </header>
 
 <section id="problem">
   <h2>The Problem</h2>
   <p>
-    Elementary teachers often provide basic supplies like tissues, sanitizer, and wipes out of pocket because these items are overlooked or seen as optional.
-    This creates financial strain and leaves classrooms under-resourced.
+    Elementary teachers often pay out of pocket for basic supplies like tissues, sanitizer, and wipes because these items are overlooked or seen as optional.
+    This creates financial stress and leaves classrooms under-resourced.
   </p>
 </section>
 
 <section id="importance">
   <h2>Why It Matters</h2>
   <div class="card">
-    Essential supplies are used daily and directly affect student health, comfort, and learning quality.
+    These supplies are used daily and directly impact student health, comfort, and learning quality.
   </div>
   <p>
-    Without them, classrooms become harder to manage and less effective for students and teachers.
+    Without them, classrooms become harder to manage and less effective for learning.
   </p>
 </section>
 
 <section id="solution">
   <h2>The Solution</h2>
   <p>
-    A simple, centralized app/web platform where teachers can list needs and communities can donate directly in real time.
+    A centralized app/web platform where teachers can list needs and communities can donate directly in real time.
   </p>
 </section>
 
@@ -179,7 +168,7 @@
 <section>
   <h2>Design Approach</h2>
   <p>
-    The platform prioritizes simplicity and reduced cognitive load so users can quickly understand needs and take action without confusion.
+    The platform is designed with simplicity and low cognitive load so users can quickly understand needs and take action easily.
   </p>
 </section>
 
@@ -187,8 +176,8 @@
   <h2>Development Plan</h2>
   <ul>
     <li><strong>Research:</strong> 2 weeks (user needs + existing systems)</li>
-    <li><strong>Wireframes:</strong> 3 weeks (user flows + structure)</li>
-    <li><strong>Design:</strong> 4 weeks (UI + prototype in Figma)</li>
+    <li><strong>Wireframes:</strong> 3 weeks (structure + flows)</li>
+    <li><strong>Design:</strong> 4 weeks (UI + prototype)</li>
     <li><strong>Testing:</strong> 3 weeks (feedback + improvements)</li>
   </ul>
 </section>
@@ -196,11 +185,9 @@
 <section id="impact">
   <h2>Impact</h2>
   <p>
-    This platform reduces pressure on teachers, improves classroom environments, and makes community support for schools more accessible and organized.
+    This platform reduces pressure on teachers, improves classroom environments, and makes community support more organized and accessible.
   </p>
 </section>
-
-
 
 </body>
 </html>
