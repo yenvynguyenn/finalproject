@@ -160,5 +160,61 @@
   }
 </script>
 
+
+<section id="game">
+  <h2>Mini Game: Supply the Classroom</h2>
+  <p>Click the supplies to restock the classroom before time runs out.</p>
+
+  <div id="gameArea" style="margin-top:15px;">
+    <p>Time: <span id="time">10</span>s | Score: <span id="score">0</span></p>
+    <button onclick="startGame()" style="margin:10px 0;padding:10px 16px;border:none;border-radius:10px;background:#2f7d5b;color:white;cursor:pointer;">Start Game</button>
+    <div id="items"></div>
+  </div>
+</section>
+
+<script>
+let timeLeft = 10;
+let score = 0;
+let gameInterval;
+
+function startGame() {
+  timeLeft = 10;
+  score = 0;
+  document.getElementById('time').textContent = timeLeft;
+  document.getElementById('score').textContent = score;
+  document.getElementById('items').innerHTML = '';
+
+  clearInterval(gameInterval);
+  gameInterval = setInterval(() => {
+    timeLeft--;
+    document.getElementById('time').textContent = timeLeft;
+
+    spawnItem();
+
+    if (timeLeft <= 0) {
+      clearInterval(gameInterval);
+      document.getElementById('items').innerHTML = '<p><strong>Game Over!</strong> You restocked ' + score + ' supplies.</p>';
+    }
+  }, 1000);
+}
+
+function spawnItem() {
+  const items = ['🧻','🧴','🧼'];
+  const item = document.createElement('span');
+  item.textContent = items[Math.floor(Math.random() * items.length)];
+  item.style.fontSize = '28px';
+  item.style.margin = '8px';
+  item.style.cursor = 'pointer';
+
+  item.onclick = () => {
+    score++;
+    document.getElementById('score').textContent = score;
+    item.remove();
+  };
+
+  document.getElementById('items').appendChild(item);
+}
+</script>
+
 </body>
 </html>
