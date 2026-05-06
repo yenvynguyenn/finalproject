@@ -10,11 +10,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Lilita+One&family=Varela+Round&display=swap" rel="stylesheet">
 
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
     body {
       font-family: 'Varela Round', sans-serif;
@@ -35,16 +31,7 @@
       border-bottom: 1px solid #e5e7e2;
     }
 
-    nav a {
-      color: #2f7d5b;
-      text-decoration: none;
-      font-size: 14px;
-      font-weight: 500;
-    }
-
-    nav a:hover {
-      color: #1f5c43;
-    }
+    nav a { color: #2f7d5b; text-decoration: none; font-size: 14px; font-weight: 500; }
 
     header {
       padding: 110px 20px;
@@ -55,17 +42,7 @@
     header h1 {
       font-family: 'Lilita One', cursive;
       font-size: 54px;
-      font-weight: 400;
       margin-bottom: 10px;
-      color: #1f2a24;
-      letter-spacing: 0.5px;
-    }
-
-    header p {
-      max-width: 750px;
-      margin: auto;
-      font-size: 16px;
-      color: #4a5a52;
     }
 
     section {
@@ -76,11 +53,6 @@
       border: 1px solid #e5e7e2;
       border-radius: 18px;
       box-shadow: 0 10px 25px rgba(0,0,0,0.03);
-      transition: transform 0.2s ease;
-    }
-
-    section:hover {
-      transform: translateY(-3px);
     }
 
     h2 {
@@ -88,23 +60,9 @@
       color: #2f7d5b;
       margin-bottom: 15px;
       font-size: 28px;
-      font-weight: 400;
     }
 
-    p {
-      color: #3f4d46;
-      font-size: 15.5px;
-    }
-
-    ul {
-      margin-top: 10px;
-      padding-left: 20px;
-    }
-
-    li {
-      margin-bottom: 8px;
-      color: #3f4d46;
-    }
+    p { color: #3f4d46; font-size: 15.5px; }
 
     .card {
       background: #eef6f1;
@@ -112,8 +70,25 @@
       padding: 16px;
       margin-top: 15px;
       border-radius: 12px;
-      color: #1f2a24;
       font-weight: 500;
+    }
+
+    /* interactive */
+    .quiz button {
+      margin-top: 10px;
+      padding: 10px 16px;
+      border: none;
+      border-radius: 10px;
+      background: #2f7d5b;
+      color: white;
+      cursor: pointer;
+    }
+
+    .quiz button:hover { background: #1f5c43; }
+
+    .result {
+      margin-top: 12px;
+      font-weight: 600;
     }
   </style>
 </head>
@@ -121,78 +96,69 @@
 
 <nav>
   <a href="#problem">Problem</a>
-  <a href="#importance">Importance</a>
-  <a href="#solution">Solution</a>
-  <a href="#features">Features</a>
-  <a href="#plan">Plan</a>
-  <a href="#impact">Impact</a>
+  <a href="#cause">Cause</a>
+  <a href="#effects">Effects</a>
+  <a href="#importance">Why It Matters</a>
+  <a href="#interactive">Try It</a>
 </nav>
 
 <header>
   <h1>Supply the Classroom</h1>
-  <p>A simple, modern platform connecting teachers, parents, and communities to support essential classroom needs</p>
+  <p>Addressing the ongoing issue of underfunded classroom supplies in elementary education</p>
 </header>
 
 <section id="problem">
   <h2>The Problem</h2>
   <p>
-    Elementary teachers often pay out of pocket for basic supplies like tissues, sanitizer, and wipes because these items are overlooked or seen as optional.
-    This creates financial stress and leaves classrooms under-resourced.
+    Many elementary classrooms lack consistent access to basic supplies such as tissues, disinfectant wipes, and hand sanitizer.
+    These items are used daily but are often not included in sufficient school funding.
+  </p>
+</section>
+
+<section id="cause">
+  <h2>The Cause</h2>
+  <p>
+    School budgets prioritize larger academic resources, leaving everyday consumables overlooked and inconsistently restocked.
+  </p>
+</section>
+
+<section id="effects">
+  <h2>The Effects</h2>
+  <p>
+    When supplies run out, classrooms become harder to manage, less clean, and less effective for learning.
   </p>
 </section>
 
 <section id="importance">
   <h2>Why It Matters</h2>
   <div class="card">
-    Essential supplies are used daily and directly impact student health, comfort, and learning quality.
+    Basic supplies directly support cleanliness, comfort, and a productive learning environment.
   </div>
-  <p>
-    Without them, classrooms become harder to manage and less effective for learning.
-  </p>
 </section>
 
-<section id="solution">
-  <h2>The Solution</h2>
-  <p>
-    A centralized app/web platform where teachers can list needs and communities can donate directly in real time.
-  </p>
+<section id="interactive">
+  <h2>Quick Reality Check</h2>
+  <p>Who do you think usually pays for missing classroom supplies?</p>
+
+  <div class="quiz">
+    <button onclick="showResult('wrong')">The school fully covers it</button><br>
+    <button onclick="showResult('correct')">Teachers often pay themselves</button>
+    <div class="result" id="result"></div>
+  </div>
 </section>
 
-<section id="features">
-  <h2>Key Features</h2>
-  <ul>
-    <li>Teacher classroom dashboards</li>
-    <li>Organized supply categories</li>
-    <li>Live donation tracking</li>
-    <li>Community request feed</li>
-    <li>Progress bars for supply goals</li>
-    <li>Urgent need notifications</li>
-  </ul>
-</section>
-
-<section>
-  <h2>Design Approach</h2>
-  <p>
-    The platform is designed with simplicity and low cognitive load so users can quickly understand needs and take action easily.
-  </p>
-</section>
-
-<section id="plan">
-  <h2>Development Plan</h2>
-  <ul>
-    <li><strong>Research:</strong> 2 weeks (user needs + existing systems)</li>
-    <li><strong>Wireframes:</strong> 3 weeks (structure + flows)</li>
-    <li><strong>Design:</strong> 4 weeks (UI + prototype)</li>
-    <li><strong>Testing:</strong> 3 weeks (feedback + improvements)</li>
-  </ul>
-</section>
-
-<section id="impact">
-  <h2>Impact</h2>
-  <p>
-    This platform reduces pressure on teachers, improves classroom environments, and makes community support more organized and accessible.
-  </p>
-</section>
+<script>
+  function showResult(answer) {
+    const result = document.getElementById('result');
+    if (answer === 'correct') {
+      result.textContent = 'Correct — many teachers spend their own money to cover basic needs.';
+      result.style.color = '#2f7d5b';
+    } else {
+      result.textContent = 'Not quite — in many cases, teachers cover these costs themselves.';
+      result.style.color = '#c0392b';
+    }
+  }
+</script>
 
 </body>
 </html>
